@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import com.github.sarxos.webcam.Webcam;
 
+import com.github.sarxos.webcam.WebcamResolution;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.beans.property.ObjectProperty;
@@ -189,6 +190,7 @@ public class MainCore extends Application {
 				}
 
 				webCam = Webcam.getWebcams().get(webCamIndex);
+				webCam.setViewSize(WebcamResolution.VGA.getSize());
 				webCam.open();
 
 				startWebCamStream();
